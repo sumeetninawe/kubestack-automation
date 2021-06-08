@@ -1,5 +1,3 @@
-mkdir -p .github/workflows
-cat > .github/workflows/main.yaml <<'EOF'
 name: deploy
 on:
   push:
@@ -100,4 +98,3 @@ jobs:
             $KBST_DOCKER_ARGS \
             $KBST_DOCKER_IMAGE \
           terraform plan --out=tfplan --input=false
-EOF
