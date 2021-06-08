@@ -13,12 +13,12 @@ module "eks_zero" {
       # e.g. name_prefix = kbst becomes: `kbst-apps-eu-west-1`
       # for small orgs the name works well
       # for bigger orgs consider department or team names
-      name_prefix = ""
+      name_prefix = "ldt"
 
       # Set the base_domain used to generate the FQDN of the cluster
       # [cluster_name].[provider_name].[base_domain]
       # e.g. kbst-apps-eu-west-1.aws.infra.example.com
-      base_domain = ""
+      base_domain = "kbst.letsdotech.dev"
 
       cluster_instance_type    = "t3.small"
       cluster_desired_capacity = "1"
@@ -30,7 +30,7 @@ module "eks_zero" {
       # Must match region set in provider
       # e.g. cluster_availability_zones = "eu-west-1a,eu-west-1b,eu-west-1c"
       # FIXME: Use actual list when TF 0.12 finally supports heterogeneous maps
-      cluster_availability_zones = ""
+      cluster_availability_zones = "eu-central-1a,eu-central-1b"
     }
 
     # ops environment, inherits from apps
